@@ -13,6 +13,8 @@ export const useSpeachSynthesisApi = () => {
   const speak = useCallback(() => {
     var msg = new SpeechSynthesisUtterance();
     msg.lang = "es-ES";
+    let voicesArray =  speechSynthesis.getVoices();
+    msg.voice = voicesArray[0];
 
     msg.text = <string>text;
     function speak() {
